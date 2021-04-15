@@ -1,0 +1,21 @@
+<form action="/vehicles/<%= @vehicle.id %>" method=POST>
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  Edit vehicle:<br>
+  <br>
+  Manufacturer: <input type="text" name="vehicle[brand]" value="<%= @vehicle.brand %>"><br>
+  <br>
+  Model: <input type="text" name="vehicle[model]" value="<%= @vehicle.model %>"><br>
+  <br>
+  Year: <input type="text" name="vehicle[year]" value="<%= @vehicle.year %>"><br>
+  <br>
+  Mileage: <input type="text" name="vehicle[mileage]" value="<%= @vehicle.mileage %>"><br>
+  <br>
+  Type: <br>
+  <input type="radio" name="vehicle[style]" value="suv" <%='checked' if @vehicle.style == "suv" %>> SUV<br>
+  <input type="radio" name="vehicle[style]" value="sedan" <%='checked' if @vehicle.style == "sedan" %>> Sedan<br>
+  <input type="radio" name="vehicle[style]" value="coupe" <%='checked' if @vehicle.style == "coupe" %>> Coupe<br>
+  <input type="radio" name="vehicle[style]" value="truck" <%='checked' if @vehicle.style == "truck" %>> Truck<br>
+  <input type="radio" name="vehicle[style]" value="convertible" <%='checked' if @vehicle.style == "convertible" %>> Convertible<br>
+  <br>
+  <input type="submit" value="Update Vehicle">
+</form>

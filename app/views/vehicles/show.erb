@@ -1,0 +1,10 @@
+<h1><%= @vehicle.year %> <%= @vehicle.brand %> <%= @vehicle.model %></h1>
+Type: <%= @vehicle.style.capitalize %><br>
+Mileage: <%= @vehicle.mileage %> miles<br>
+<br>
+<a href="/vehicles/<%= @vehicle.id %>/edit">Edit Details</a><br>
+<br>
+<form method="post" action="/vehicles/<%= @vehicle.id %>/delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete From Inventory">
+</form>
