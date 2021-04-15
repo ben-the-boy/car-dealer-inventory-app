@@ -6,7 +6,11 @@ class VehiclesController < ApplicationController
   end
 
   get '/vehicles/new' do
-    erb :"vehicles/new"
+    if logged_in?
+      erb :"vehicles/new"
+    else
+      redirect '/login'
+    end
   end
 
   post '/vehicles' do
@@ -15,13 +19,25 @@ class VehiclesController < ApplicationController
   end
 
   get '/vehicles/:id' do
-    @vehicle = Vehicle.find(params[:id])
-    erb :"vehicles/show"
+    if Vehicle.ids.include?(params[:id].to_i)
+      @vehicle = Vehicle.find(params[:id])
+      erb :"vehicles/show"
+    else
+      redirect '/vehicles'
+    end
   end
 
   get '/vehicles/:id/edit' do
-    @vehicle = Vehicle.find(params[:id])
-    erb :"vehicles/edit"
+    if logged_in? && Vehicle.ids.include?(params[:id].to_i)
+      @vehicle = Vehicle.find(params[:id])
+      if @vehicle.user_id == current_user.id
+        erb :"vehicles/edit"
+      else
+        redirect "/vehicles/#{@vehicle.id}"
+      end
+    else
+      redirect '/login'
+    end
   end
 
   patch '/vehicles/:id' do
@@ -31,8 +47,16 @@ class VehiclesController < ApplicationController
   end
 
   delete '/vehicles/:id/delete' do
-    @vehicle = Vehicle.find(params[:id])
-    @vehicle.delete
-    redirect '/vehicles'
+    if logged_in? && Vehicle.ids.include?(params[:id].to_i)
+      @vehicle = Vehicle.find(params[:id])
+      if current_user.vehicle_ids.include?(@vehicle.id)
+        @vehicle.delete
+        redirect '/vehicles'
+      else
+        redirect "/vehicles/#{@vehicle.id}"
+      end
+    else
+      redirect '/login'
+    end
   end
 end

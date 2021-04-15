@@ -10,6 +10,8 @@
   <br>
   Mileage: <input type="text" name="vehicle[mileage]" value="<%= @vehicle.mileage %>"><br>
   <br>
+  Color: <input type="text" name="vehicle[color]" value="<%= @vehicle.color %>"><br>
+  <br>
   Type: <br>
   <input type="radio" name="vehicle[style]" value="suv" <%='checked' if @vehicle.style == "suv" %>> SUV<br>
   <input type="radio" name="vehicle[style]" value="sedan" <%='checked' if @vehicle.style == "sedan" %>> Sedan<br>
