@@ -15,7 +15,11 @@ class VehiclesController < ApplicationController
 
   post '/vehicles' do
     vehicle = current_user.vehicles.create(params[:vehicle])
-    redirect "/vehicles/#{vehicle.id}"
+    if vehicle.save
+      redirect "/vehicles/#{vehicle.id}"
+    else
+      redirect '/vehicles/new'
+    end 
   end
 
   get '/vehicles/:id' do

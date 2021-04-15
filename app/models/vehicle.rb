@@ -1,3 +1,4 @@
 class Vehicle < ActiveRecord::Base
-  belongs_to :user 
+  validates_presence_of :brand, :model, :year, :mileage, :style, :color
+  belongs_to :user
 end
