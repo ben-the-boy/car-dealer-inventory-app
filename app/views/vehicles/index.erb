@@ -1,6 +1,8 @@
 <% @users.each do |user| %>
   <h3><%= user.dealership %></h3>
+  <ul>
     <% user.vehicles.each do |vehicle| %>
-      <a href="/vehicles/<%= vehicle.id %>"><%= vehicle.year %> <%= vehicle.brand %> <%= vehicle.model %></a><br>
+      <li><a href="/vehicles/<%= vehicle.id %>"><%= vehicle.year %> <%= vehicle.brand %> <%= vehicle.model %></a><br></li>
     <% end %>
+  </ul>
 <% end %>
