@@ -1,0 +1,20 @@
+<form action="/vehicles" method=POST>
+  Add a vehicle to inventory:<br>
+  <br>
+  Manufacturer: <input type="text" name="vehicle[brand]"><br>
+  <br>
+  Model: <input type="text" name="vehicle[model]"><br>
+  <br>
+  Year: <input type="text" name="vehicle[year]"><br>
+  <br>
+  Mileage: <input type="text" name="vehicle[mileage]"><br>
+  <br>
+  Type: <br>
+  <input type="radio" name="vehicle[style]" value="suv"> SUV<br>
+  <input type="radio" name="vehicle[style]" value="sedan"> Sedan<br>
+  <input type="radio" name="vehicle[style]" value="coupe"> Coupe<br>
+  <input type="radio" name="vehicle[style]" value="truck"> Truck<br>
+  <input type="radio" name="vehicle[style]" value="convertible"> Convertible<br>
+  <br>
+  <input type="submit" value="Add Vehicle">
+</form>

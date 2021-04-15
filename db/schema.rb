@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_15_182504) do
+ActiveRecord::Schema.define(version: 2021_04_15_200038) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2021_04_15_182504) do
   create_table "vehicles", force: :cascade do |t|
     t.string "brand"
     t.string "model"
-    t.string "type"
+    t.string "style"
     t.string "mileage"
     t.string "year"
     t.integer "user_id"
