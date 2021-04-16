@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     @user = User.create(username: params[:username], password: params[:password])
     if @user.save
       session[:user_id] = @user.id
+      flash[:message] = "Welcome #{current_user.username}!"
       redirect '/vehicles'
     else
       redirect '/signup'
@@ -29,6 +30,7 @@ class UsersController < ApplicationController
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
+      flash[:message] = "Welcome #{current_user.username}!"
       redirect '/vehicles'
     else
       redirect '/login'
@@ -36,12 +38,12 @@ class UsersController < ApplicationController
   end
 
   get '/logout' do
-    session.clear
-    redirect '/login'
-  end
-
-  post '/logout' do
-    session.clear
-    redirect '/login'
+    if logged_in?
+      session.clear
+      flash[:message] = "Successfully logged out."
+      redirect '/login'
+    else
+      redirect '/login'
+    end 
   end
 end

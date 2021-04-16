@@ -16,6 +16,7 @@ class VehiclesController < ApplicationController
   post '/vehicles' do
     vehicle = current_user.vehicles.create(params[:vehicle])
     if vehicle.save
+      flash[:message] = "Vehicle saved!"
       redirect "/vehicles/#{vehicle.id}"
     else
       redirect '/vehicles/new'
@@ -47,6 +48,7 @@ class VehiclesController < ApplicationController
   patch '/vehicles/:id' do
     @vehicle = Vehicle.find(params[:id])
     @vehicle.update(params[:vehicle])
+    flash[:message] = "Vehicle updated!"
     redirect "/vehicles/#{@vehicle.id}"
   end
 
@@ -55,6 +57,7 @@ class VehiclesController < ApplicationController
       @vehicle = Vehicle.find(params[:id])
       if current_user.vehicle_ids.include?(@vehicle.id)
         @vehicle.delete
+        flash[:message] = "Vehicle removed!"
         redirect '/vehicles'
       else
         redirect "/vehicles/#{@vehicle.id}"
