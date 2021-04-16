@@ -8,7 +8,7 @@ To launch this app, clone down this repository, run 'bundle install', and then r
 
 <h2>Contributing</h2>
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/ben_the_boy/car-dealer-inventory-app. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/ben-the-boy/car-dealer-inventory-app. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
 <h2>License</h2>
 
