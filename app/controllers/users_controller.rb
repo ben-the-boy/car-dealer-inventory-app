@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   get '/signup' do
     if !logged_in?
-      erb :"users/signup"
+      erb :"users/signup", :layout => false
     else
       redirect '/vehicles'
     end
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   get '/login' do
     if !logged_in?
-      erb :"users/login"
+      erb :"users/login", :layout => false
     else
       redirect '/vehicles'
     end
@@ -44,4 +44,4 @@ class UsersController < ApplicationController
     session.clear
     redirect '/login'
   end
-end 
+end

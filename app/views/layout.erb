@@ -1,1 +1,15 @@
-<%= yield %>
+<!doctype html>
+<html>
+  <head>
+    <title>AutoDealerInventory</title>
+  </head>
+  <h1>AutoDealerInventory</h1>
+  <% if logged_in? %>
+    <h3><%= current_user.username %></h3> <a href="/logout">Logout</a>
+  <% else %>
+    <a href="/login">Login</a> or <a href="/signup">Sign Up</a>
+  <% end %>
+  <body>
+    <%= yield %>
+  </body>
+</html>
