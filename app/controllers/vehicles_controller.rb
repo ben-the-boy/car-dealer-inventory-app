@@ -7,7 +7,7 @@ class VehiclesController < ApplicationController
 
   get '/vehicles/new' do
     if logged_in?
-      erb :"vehicles/new"
+      erb :"vehicles/new", :layout => false
     else
       redirect '/login'
     end
@@ -19,7 +19,7 @@ class VehiclesController < ApplicationController
       redirect "/vehicles/#{vehicle.id}"
     else
       redirect '/vehicles/new'
-    end 
+    end
   end
 
   get '/vehicles/:id' do
