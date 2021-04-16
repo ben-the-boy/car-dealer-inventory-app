@@ -1,6 +1,6 @@
 <h1>CarDealerInventory</h1>
 
-Welcome to Car Dealer Inventory app. This app allows you to browse current car dealer inventory whether or not you are a registered user, and additionally allows you to create your own account to maintain your own vehicle inventory as well.
+Welcome to the Car Dealer Inventory app. This app allows you to browse current car dealer inventory whether or not you are a registered user, and additionally allows you to create your own account to maintain your own vehicle inventory as well.
 
 <h2>Installation</h2>
 
