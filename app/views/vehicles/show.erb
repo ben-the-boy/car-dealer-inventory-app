@@ -1,3 +1,7 @@
+<% if !logged_in? %>
+  <br>
+  <br><a href="/vehicles">Back to Browse</a><br>
+<% end %>
 <h1><%= @vehicle.year %> <%= @vehicle.brand %> <%= @vehicle.model %></h1>
 Color: <%= @vehicle.color.capitalize %><br>
 Type: <%= @vehicle.style %><br>
