@@ -12,4 +12,4 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/'ben_t
 
 <h2>License</h2>
 
-The gem is available as open source under the terms of the MIT License.
+The app is available as open source under the terms of the <a href="https://opensource.org/licenses/MIT">MIT License</a>.
