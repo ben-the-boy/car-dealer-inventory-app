@@ -1,4 +1,4 @@
-Car Dealer Inventory
+CarDealerInventory
 Welcome to Car Dealer Inventory app. This app allows you to browse current car dealer inventory whether or not you are a registered user, and additionally allows you to create your own account to maintain your own vehicle inventory as well.
 
 Installation
@@ -8,4 +8,4 @@ Contributing
 Bug reports and pull requests are welcome on GitHub at https://github.com/'ben_the_boy'/car-dealer-inventory-app. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
 License
-The code is available as open source under the terms of the MIT License.
+The gem is available as open source under the terms of the MIT License.
