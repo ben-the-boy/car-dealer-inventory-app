@@ -1,0 +1,6 @@
+<h2>Your Current Inventory:</h2>
+<% current_user.vehicles.each do |vehicle| %>
+  <li><a href="/vehicles/<%= vehicle.id %>"><%= vehicle.year %> <%= vehicle.brand %> <%= vehicle.model %></a><br></li>
+<% end %>
+<br>
+<a href="/vehicles/new">Add New Vehicle</a>

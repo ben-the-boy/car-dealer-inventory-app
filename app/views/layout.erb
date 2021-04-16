@@ -10,7 +10,7 @@
   <% if logged_in? %>
     <b><%= current_user.username %></b> <a href="/logout">Logout</a><br>
     <br>
-    <a href="/vehicles">Home</a> <a href="/vehicles/new">Add New Vehicle</a><br>
+    <a href="/home">Home</a> <a href="/vehicles">View All Dealers</a><br>
     <br>
   <% else %>
     <a href="/login">Login</a> or <a href="/signup">Sign Up</a>

@@ -17,7 +17,7 @@ class VehiclesController < ApplicationController
     vehicle = current_user.vehicles.create(params[:vehicle])
     if vehicle.save
       flash[:message] = "Vehicle saved!"
-      redirect "/vehicles/#{vehicle.id}"
+      redirect "/home"
     else
       redirect '/vehicles/new'
     end
@@ -58,7 +58,7 @@ class VehiclesController < ApplicationController
       if current_user.vehicle_ids.include?(@vehicle.id)
         @vehicle.delete
         flash[:message] = "Vehicle removed!"
-        redirect '/vehicles'
+        redirect '/home'
       else
         redirect "/vehicles/#{@vehicle.id}"
       end
