@@ -4,7 +4,7 @@
     <title>AutoDealerInventory</title>
   </head>
   <% if flash.has?(:message) %>
-    <%= flash[:message] %>
+    <b style="color:Red;"><%= flash[:message] %></b>
   <% end %><br>
   <h1>AutoDealerInventory</h1>
   <% if logged_in? %>

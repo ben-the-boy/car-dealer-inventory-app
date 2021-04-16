@@ -1,3 +1,6 @@
+<% if flash.has?(:message) %>
+  <b style="color:Red;"><%= flash[:message] %></b>
+<% end %><br>
 <h1>AutoDealerInventory</h1>
 <form action="/signup" method=POST>
   Create Username: <input type="text" name="username"><br>

@@ -14,6 +14,7 @@ class UsersController < ApplicationController
       flash[:message] = "Welcome #{current_user.username}!"
       redirect '/home'
     else
+      flash[:message] = "Please complete all fields."
       redirect '/signup'
     end
   end
@@ -33,6 +34,7 @@ class UsersController < ApplicationController
       flash[:message] = "Welcome #{current_user.username}!"
       redirect '/home'
     else
+      flash[:message] = "Invalid Username or Password."
       redirect '/login'
     end
   end
@@ -41,6 +43,7 @@ class UsersController < ApplicationController
     if logged_in?
       erb :"/users/vehicles"
     else
+      flash[:message] = "Please login to continue."
       redirect '/login'
     end
   end

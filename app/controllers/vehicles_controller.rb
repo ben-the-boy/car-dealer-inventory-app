@@ -9,6 +9,7 @@ class VehiclesController < ApplicationController
     if logged_in?
       erb :"vehicles/new", :layout => false
     else
+      flash[:message] = "Please login to continue."
       redirect '/login'
     end
   end
@@ -19,6 +20,7 @@ class VehiclesController < ApplicationController
       flash[:message] = "Vehicle saved!"
       redirect "/home"
     else
+      flash[:message] = "Please complete all fields."
       redirect '/vehicles/new'
     end
   end
@@ -28,6 +30,7 @@ class VehiclesController < ApplicationController
       @vehicle = Vehicle.find(params[:id])
       erb :"vehicles/show"
     else
+      flash[:message] = "Vehicle does not exist."
       redirect '/vehicles'
     end
   end
@@ -38,9 +41,11 @@ class VehiclesController < ApplicationController
       if @vehicle.user_id == current_user.id
         erb :"vehicles/edit"
       else
+        flash[:message] = "Vehicle is not in your inventory."
         redirect "/vehicles/#{@vehicle.id}"
       end
     else
+      flash[:message] = "Please login to continue."
       redirect '/login'
     end
   end
@@ -60,9 +65,11 @@ class VehiclesController < ApplicationController
         flash[:message] = "Vehicle removed!"
         redirect '/home'
       else
+        flash[:message] = "Vehicle is not in your inventory."
         redirect "/vehicles/#{@vehicle.id}"
       end
     else
+      flash[:message] = "Please login to continue."
       redirect '/login'
     end
   end
