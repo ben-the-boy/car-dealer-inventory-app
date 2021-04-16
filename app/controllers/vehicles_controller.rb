@@ -39,7 +39,7 @@ class VehiclesController < ApplicationController
     if logged_in? && Vehicle.ids.include?(params[:id].to_i)
       @vehicle = Vehicle.find(params[:id])
       if @vehicle.user_id == current_user.id
-        erb :"vehicles/edit"
+        erb :"vehicles/edit", :layout => false
       else
         flash[:message] = "Vehicle is not in your inventory."
         redirect "/vehicles/#{@vehicle.id}"
